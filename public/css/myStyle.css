@@ -1,0 +1,19 @@
+#appTitle{
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 40px;
+    margin-top: 50px;
+}
+
+.container{
+    width: 30%;
+    margin: auto;
+}
+
+.block-button{
+    margin-left: 20px;
+}
+
+.list-group{
+    margin-top: 50px;
+}

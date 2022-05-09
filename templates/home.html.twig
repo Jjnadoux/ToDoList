@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Home' %}
+
+{% block body %}
+
+<div class="container">
+    <h3>Les listes</h3>     
+    <ul class="list-group list-group">
+    
+        {% for list in lists %}
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">{{ list['name'] }}</div>
+                <span class="badge bg-primary rounded-pill">{{list['nbTasks']}} {% if list['nbTasks']>1 %} tâches {% else %} tâche {% endif %}</span>
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end block-button">
+                <a href="{{ path('todolist_detail', {'id': list['id']})}}">
+                    <button class="btn btn-primary me-md-2" type="button">Détails...</button>
+                </a>
+                <button class="btn btn-danger" type="button">Supprimer la liste</button>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
