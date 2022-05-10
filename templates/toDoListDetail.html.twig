@@ -3,9 +3,24 @@
 {% block title 'Home' %}
 
 {% block body %}
-    {{ dump(listDetail) }}
-
-<div class="container">
-    {# <h3> {{listDetail}} #}
+  
+<div class="containerTask">
+    <h3> {{list.name}} </h3>
+    <div style="display:flex; justify-content: space-between;">
+        {% for task in listDetail %}
+        <div class="card">
+            <div class="card-header" style="{% if (task['isDone'] == 1) %} background-color:#c2f3c2;{% else %} background-color:#f39a9a; {% endif %}" >
+                Tâche
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{task['title']}}</h5>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheck-{{ task['id'] }}" {% if (task['isDone'] == 1) %} checked {% endif %}>
+                        <label class="form-check-label" for="flexSwitchCheck"> {% if (task['isDone'] == 1) %} Fait {% else %} non fait {% endif %}</label>
+                    </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}

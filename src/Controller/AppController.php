@@ -33,8 +33,10 @@ class AppController extends AbstractController
      */
     public function ToDoListDetail(EntityManagerInterface $em, $id): Response
     {
+        $list = $em->getRepository(ToDoList::class)->find($id);
         $listDetail = $em->getRepository(Task::class)->findAllTasksByList($id);
         return $this->render('toDolistDetail.html.twig', [
+            'list' => $list,
             'listDetail' => $listDetail,
         ]);
     }

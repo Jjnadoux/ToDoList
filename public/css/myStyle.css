@@ -1,19 +1,35 @@
-#appTitle{
+#appTitle {
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 40px;
-    margin-top: 50px;
+    margin: auto;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border: 2px grey solid;
+    width: 70%;
 }
 
-.container{
+.container {
     width: 30%;
     margin: auto;
 }
 
-.block-button{
+.block-button {
     margin-left: 20px;
 }
 
-.list-group{
+.list-group {
+    margin-top: 50px;
+}
+
+.card {
+    margin-left: 50px;
+    margin-top: 50px;
+    width: 300px;
+}
+
+.containerTask {
+    width: 70%;
+    margin: auto;
     margin-top: 50px;
 }
